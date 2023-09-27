@@ -6,27 +6,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "uso_dica")
+@Table(name = "video_aula")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsoDica {
+public class VideoAula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    @JoinColumn(name = "habilidade_id")
+    private Habilidade habilidade;
 
-    @ManyToOne
-    @JoinColumn(name = "dica_id")
-    private Dica dica;
+    private String titulo;
 
-    private LocalDateTime utilizadoEm;
+    private String url;
+
+    private int valorMoedas;
+
 }

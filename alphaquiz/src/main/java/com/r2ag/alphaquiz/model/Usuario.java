@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
+@Table(name = "usuario")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,6 +22,7 @@ public class Usuario {
 
     private String nome;
     private String email;
+    private String senha;
     private int pontos;
     private int moedas;
 

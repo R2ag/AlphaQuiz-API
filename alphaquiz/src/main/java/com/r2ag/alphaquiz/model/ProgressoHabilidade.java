@@ -9,24 +9,26 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "uso_dica")
+@Table(name = "progresso_habilidade")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsoDica {
+public class ProgressoHabilidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "habilidade_id")
+    private Habilidade habilidade;
+
+    @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "dica_id")
-    private Dica dica;
+    private int pontuacao;
 
-    private LocalDateTime utilizadoEm;
+    private LocalDateTime adquiridaEm;
 }

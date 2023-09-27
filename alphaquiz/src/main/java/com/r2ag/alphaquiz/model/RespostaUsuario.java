@@ -6,15 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "uso_dica")
+@Table(name = "resposta_usuario")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsoDica {
+public class RespostaUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +23,17 @@ public class UsoDica {
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "dica_id")
-    private Dica dica;
+    @JoinColumn(name = "pergunta_id")
+    private Pergunta pergunta;
 
-    private LocalDateTime utilizadoEm;
+    @ManyToOne
+    @JoinColumn(name = "opcao_resposta_id")
+    private OpcaoResposta opcaoResposta;
+
+    private boolean correto;
+
+    private int pontuacaoObtida;
+
+    private int moedasGanhas;
+
 }

@@ -9,24 +9,20 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "uso_dica")
+@Table(name = "video_aula_assistida")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsoDica {
+public class VideoAulaAssistida {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private LocalDateTime assistidaEm;
 
     @ManyToOne
-    @JoinColumn(name = "dica_id")
-    private Dica dica;
-
-    private LocalDateTime utilizadoEm;
+    @JoinColumn(name = "video_aula_id")
+    private VideoAula videoAula;
 }

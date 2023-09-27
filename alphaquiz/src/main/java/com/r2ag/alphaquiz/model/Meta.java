@@ -6,27 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Table(name = "uso_dica")
+@Table(name = "meta")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsoDica {
+public class Meta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private String descricao;
 
-    @ManyToOne
-    @JoinColumn(name = "dica_id")
-    private Dica dica;
-
-    private LocalDateTime utilizadoEm;
+    @OneToMany(mappedBy = "meta", cascade = CascadeType.ALL)
+    private List<Habilidade> habilidadesNecessarias;
 }

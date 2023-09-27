@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
+@Table(name = "pergunta")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,7 +22,8 @@ public class Pergunta {
     private Long id;
 
     private String descricao;
-    private int pontuacao;
+    private int valorPontos;
+    private int valorMoedas;
 
     @ManyToOne
     @JoinColumn(name = "habilidade_id")
@@ -36,4 +38,7 @@ public class Pergunta {
     @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL)
     private List<Dica> dicas;
 
+    @ManyToOne
+    @JoinColumn(name = "video_aula_id")
+    private VideoAula videoAula;
 }
