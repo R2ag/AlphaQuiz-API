@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AlphaQuiz-API.iml" filepath="$PROJECT_DIR$/.idea/AlphaQuiz-API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/alphaquiz.main.iml" filepath="$PROJECT_DIR$/.idea/modules/alphaquiz.main.iml" />
     </modules>
   </component>
 </project>
