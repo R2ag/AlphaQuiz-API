@@ -44,4 +44,12 @@ public class UsuarioService {
         usuarioRepository.delete(usuario);
     }
 
+    public int verificarSaldo(Long id){
+        //Buscar o saldo do usuario;
+    }
+
+    public void atualizarSaldo(Long id, int valor){
+        //Atualizar o saldo do usuario a partir do valor recebido;
+    }
+
 }

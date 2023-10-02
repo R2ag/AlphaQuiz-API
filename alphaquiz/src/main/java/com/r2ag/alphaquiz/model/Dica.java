@@ -17,6 +17,7 @@ public class Dica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private int ordem;
     private String texto;
     private int custoMoedas;
 
